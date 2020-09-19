@@ -7,9 +7,19 @@ node_js:
   - '12'
 git:
   depth: 3
+script:
+  - yarn test
 notifications:
   email:
     recipients:
       - mrdaniel19996@gmail.com
     on_success: always
     on_failure: always
+deploy: 
+  provider: heroku
+  skip-cleanup: true
+  kepp-history: true
+  api_key: b4f7b177-f227-46c0-ac2b-f2d639eba3d5
+  app: juan-store-be
+  on:
+    repo: Mrdaniel01/platzi-store-backend
